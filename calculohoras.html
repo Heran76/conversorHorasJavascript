@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conversión de segundos a hh:mm:ss</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Cálculo de hh:mm:ss</h1>
+  <label for="inputSegundos">Inserte los segundos a calcular:</label>
+  <input type="number" id="inputSegundos" placeholder="Ingrese los segundos">
+  <br><button onclick="calcular()">Calcular</button>
+  <p id="resultado"></p>
+
+  <script>
+    function calcular() {
+      // Obtener el valor de los segundos desde el input
+      var segundosInput = document.getElementById('inputSegundos').value;
+
+      // Validar que se haya ingresado un número
+      if (isNaN(segundosInput)) {
+        alert("Por favor, ingrese un número válido de segundos.");
+        return;
+      }
+
+      // Convertir los segundos a horas, minutos y segundos
+      var horas = Math.floor(segundosInput / 3600);
+      var minutos = Math.floor((segundosInput % 3600) / 60);
+      var segundos = segundosInput % 60;
+
+      // Mostrar el resultado en el DOM
+      var resultadoElement = document.getElementById('resultado');
+      resultadoElement.innerHTML = "Resultado: " + horas +" horas, " + minutos +" minutos, "+ segundos +" segundos. ";
+    }
+  </script>
+
+</body>
+</html>
