@@ -1,1 +1,1 @@
-ejercicio concerso de segundo en horas
+Ejercicio conversor de segundo en horas
